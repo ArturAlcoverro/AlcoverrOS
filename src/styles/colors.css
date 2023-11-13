@@ -1,0 +1,11 @@
+:root {
+  --divider: #464646;
+  --divider: #1f1f1f;
+  --divider: #292929;
+  --font: #ededed;
+  --font-secondary: #878888;
+  --background: #000000;
+  --background-opaque: #00000080;
+  --background-opaque: #00000001;
+  --background-secondary: #0A0A0B;
+}
