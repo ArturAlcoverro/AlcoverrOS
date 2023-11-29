@@ -6,9 +6,12 @@ import { Provider } from 'react-redux'
 import './styles/index.css'
 import './styles/colors.css'
 import './styles/fonts.css'
+import React from 'react'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
 )

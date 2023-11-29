@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BaseWindow, WindowCoords } from '@store/windows/windowsTypes'
+import { Window, WindowCoords } from '@store/windows/windowsTypes/Window'
 import { SmallText } from '../Texts/SmallText'
 
 import Draggable, { DraggableEventHandler } from 'react-draggable' // The default
@@ -8,7 +8,7 @@ import { useWindows } from '@hooks/useWindows'
 import { IconFactory } from '@components/IconFactory/IconFactory'
 
 interface WindowContainerProps {
-  windowItem: BaseWindow
+  windowItem: Window
   children: React.ReactNode
 }
 
@@ -26,7 +26,7 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
   })
 
   const focusHandler = () => {
-    focusWindow(windowItem.id)
+    focusWindow(windowItem.key)
   }
 
   const onDragHandler: DraggableEventHandler = (_e, data) => {
@@ -34,11 +34,11 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
   }
 
   const onDragStopHandler: DraggableEventHandler = (_e, data) => {
-    moveWindow(windowItem.id, { x: data.x, y: data.y })
+    moveWindow(windowItem.key, { x: data.x, y: data.y })
   }
 
   const onResizeStartHandler: ResizeStartCallback = () => {
-    focusWindow(windowItem.id)
+    focusWindow(windowItem.key)
     setOnResizeCoords(coords)
   }
 
@@ -53,14 +53,14 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
   }
 
   const onResizeStopHandler: ResizeCallback = (_e, _direction, _ref, data) => {
-    resizeWindow(windowItem.id, {
+    resizeWindow(windowItem.key, {
       height: windowItem.size.height + data.height,
       width: windowItem.size.width + data.width,
     })
   }
 
   const closeWindowHandler = () => {
-    closeWindow(windowItem.id)
+    closeWindow(windowItem.key)
   }
 
   return (
@@ -90,6 +90,7 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
             tabIndex={0}
             onKeyDown={focusHandler}
             onClick={focusHandler}
+            // onMouseDown={focusHandler}
             className="grow-0 w-full border-b border-divider h-6 shrink-0 relative flex justify-end items-center cursor-default"
           >
             <div className="drag w-full h-full flex justify-center items-center ">
@@ -97,12 +98,12 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
                 {windowItem.title}
               </SmallText>
             </div>
-            <button onClick={closeWindowHandler} className="h-full aspect-square border-l border-divider">
+            <button onClick={closeWindowHandler} className="h-full aspect-square border-l border-divider group">
               <IconFactory
                 onClick={closeWindowHandler}
                 icon="close"
                 size={48}
-                className="w-full aspect-square h-auto p-[0.125rem] fill-font stroke-font"
+                className="w-full aspect-square h-auto p-[0.125rem] fill-font stroke-font group-hover:stroke-accent"
               />
             </button>
           </div>
@@ -111,6 +112,7 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
             tabIndex={0}
             onKeyDown={focusHandler}
             onClick={focusHandler}
+            // onMouseDown={focusHandler}
             className="grow overflow-hidden cursor-default"
           >
             {children}

@@ -10,6 +10,7 @@ export default {
         transparent: 'transparent',
         divider: 'var(--divider)',
         font: 'var(--font)',
+        accent: 'var(--accent)',
         fontSecondary: 'var(--font-secondary)',
         background: 'var(--background)',
         backgroundOpaque: 'var(--background-opaque)',

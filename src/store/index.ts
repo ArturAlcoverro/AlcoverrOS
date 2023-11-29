@@ -4,7 +4,7 @@ import windowsReducer from './windows/windowsSlice'
 export const store = configureStore({
   reducer: {
     windows: windowsReducer,
-    explorer: 
+    // explorer: 
   },
 })
 
