@@ -5,10 +5,10 @@ import { WindowContainer } from './WindowContainer'
 
 const windows: Record<WindowId, WindowElement> = {
   about: lazy(() => import('@components/Windows/AboutMe/AboutMe')),
-  work: lazy(() => import('@components/Windows/AboutMe/AboutMe')),
+  work: lazy(() => import('@components/Windows/FileExplorer/FileExplorer')),
   contact: lazy(() => import('@components/Windows/Contact/Contact')),
   explorer: lazy(() => import('@components/Windows/FileExplorer/FileExplorer')),
-  project: lazy(() => import('@components/Windows/AboutMe/AboutMe')),
+  project: lazy(() => import('@components/Windows/FileExplorer/FileExplorer')),
 }
 
 export const WindowFactory: React.FC<WindowFactoryProps> = ({ windowKey, window }) => {
