@@ -12,12 +12,17 @@ import { Folder, File } from '@store/explorer/explorerTypes'
 export const WindowManager: React.FC<WindowManagerProps> = () => {
   const { windows, openWindow } = useWindows()
   const { getItem } = useExplorer()
-  console.log('> ❎🆘🆚 - windows: ', windows)
   const desktop = getItem('/desktop')
   const desktopItems = []
   
   if(desktop instanceof Folder){
     desktopItems.push(...desktop.items)
+  }
+
+  function desktopItemsClickHandler(key: WindowKey) {
+    return () => {
+      openWindow(key)
+    }
   }
 
   return (
@@ -28,7 +33,7 @@ export const WindowManager: React.FC<WindowManagerProps> = () => {
 
           return (
             <button
-              onClick={() => openWindow(key)}
+              onClick={desktopItemsClickHandler(key)}
               key={item.name}
               className="group h-24 w-24 border border-divider px-6 pt-[14px] pb-[7px] -mb-[1px] flex flex-col justify-center items-center gap-[6px]"
             >

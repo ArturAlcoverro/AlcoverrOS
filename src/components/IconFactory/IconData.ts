@@ -4,6 +4,7 @@ type IconElement = LazyExoticComponent<FC<React.SVGProps<SVGSVGElement> & { titl
 
 export type IconSize = 24 | 32 | 48  
 
+
 export type IconId =
   | 'arrowLeft'
   | 'arrowRight'
@@ -17,11 +18,13 @@ export type IconId =
   | 'controller'
   | 'folder'
   | 'github'
+  | 'grid'
   | 'information'
   | 'instagram'
   | 'jordiBarenys'
   | 'lemon'
   | 'linkedin'
+  | 'list'
   | 'logo'
   | 'longArrowLeft'
   | 'longArrowRight'
@@ -98,6 +101,11 @@ export const icons: Record<IconId, Record<IconSize, IconElement>> = {
     32: lazy(() => import('@assets/icons/Github/32.svg?react')),
     48: lazy(() => import('@assets/icons/Github/48.svg?react')),
   },
+  grid: {
+    24: lazy(() => import('@assets/icons/Grid/24.svg?react')),
+    32: lazy(() => import('@assets/icons/Grid/32.svg?react')),
+    48: lazy(() => import('@assets/icons/Grid/48.svg?react')),
+  },
   information: {
     24: lazy(() => import('@assets/icons/Information/24.svg?react')),
     32: lazy(() => import('@assets/icons/Information/32.svg?react')),
@@ -122,6 +130,11 @@ export const icons: Record<IconId, Record<IconSize, IconElement>> = {
     24: lazy(() => import('@assets/icons/Linkedin/24.svg?react')),
     32: lazy(() => import('@assets/icons/Linkedin/32.svg?react')),
     48: lazy(() => import('@assets/icons/Linkedin/48.svg?react')),
+  },
+  list: {
+    24: lazy(() => import('@assets/icons/List/24.svg?react')),
+    32: lazy(() => import('@assets/icons/List/32.svg?react')),
+    48: lazy(() => import('@assets/icons/List/48.svg?react')),
   },
   logo: {
     24: lazy(() => import('@assets/icons/Logo.svg?react')),
@@ -187,5 +200,5 @@ export const icons: Record<IconId, Record<IconSize, IconElement>> = {
     24: lazy(() => import('@assets/icons/User/24.svg?react')),
     32: lazy(() => import('@assets/icons/User/32.svg?react')),
     48: lazy(() => import('@assets/icons/User/48.svg?react')),
-  }, 
+  },
 }

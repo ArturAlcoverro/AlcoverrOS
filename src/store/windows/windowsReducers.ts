@@ -44,14 +44,12 @@ export function closeReducer(state: Window[], action: PayloadAction<WindowKey>) 
  */
 export function openReducer(state: Window[], action: PayloadAction<WindowKey>) {
   const key = action.payload
-  // console.log(`> ❎🆘🆚 - state: `, state)
   const window = getWindow(state, key)
+
   if (!window) {
-    // console.log(`> ❎🆘🆚 - WindowFactory(key): `, WindowFactory(key))
     state.push(WindowFactory(key))
   }
-  // console.log(`> ❎🆘🆚 - state: `, state)
-  // console.log(`> ❎🆘🆚 - bringFront(state, key): `, bringFront(state, key))
+  
   return bringFront(state, key)
 }
 
@@ -80,7 +78,6 @@ export function resizeReducer(state: Window[], action: PayloadAction<{ key: Wind
  */
 export function focusReducer(state: Window[], action: PayloadAction<{ key?: WindowKey }>) {
   let key = action.payload.key ?? null
-  console.log(`> ❎🆘🆚 - key: `, key)
 
   if (key) {
     return bringFront(state, key)
