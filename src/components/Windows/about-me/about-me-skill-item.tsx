@@ -1,7 +1,7 @@
-import { SmallText } from '@components/Texts/SmallText'
-import { SkillItemProps } from './AboutMeData'
+import { SmallText } from '@components/texts/small-text'
+import { SkillItemProps } from './data'
 
-export const SkillItem: React.FC<SkillItemProps> = ({ title, skills }) => {
+export const AboutMeSkillItem: React.FC<SkillItemProps> = ({ title, skills }) => {
   return (
     <SmallText>
       <span className="text-fontSecondary">{title}: </span>
@@ -9,5 +9,3 @@ export const SkillItem: React.FC<SkillItemProps> = ({ title, skills }) => {
     </SmallText>
   )
 }
-
-

@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 // import { data } from './MenuData'
 import { CSSTransition } from 'react-transition-group'
-import { H1 } from '../Texts'
-import { sections, actions } from './MenuData'
+import { H1 } from '../texts'
+import { sections, actions } from './menu-data'
 import './Menu.css'
-import { MenuSection } from './MenuSection'
-import { MenuAction } from './MenuAction'
+import { MenuSection } from './menu-section'
+import { MenuAction } from './menu-action'
 
 export const Menu: React.FC<MenuProps> = ({ open }) => {
   return (

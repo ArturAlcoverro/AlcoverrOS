@@ -1,10 +1,10 @@
 import profile from '@assets/images/profile.jpg'
-import { RegularText } from '@components/Texts/RegularText'
-import { SmallText } from '@components/Texts/SmallText'
-import { ExperienceItem } from './ExperienceItem'
-import { SkillItem } from './SkillItem'
-import { H2 } from '@components/Texts/H2'
-import { experience, skills, education } from './AboutMeData'
+import { RegularText } from '@components/texts/regular-text'
+import { SmallText } from '@components/texts/small-text'
+import { AboutMeExperienceItem } from './about-me-experience-item'
+import { AboutMeSkillItem } from './about-me-skill-item'
+import { H2 } from '@components/texts/h2'
+import { experience, skills, education } from './data'
 
 export const AboutMe: React.FC<AboutMeProps> = () => {
   return (
@@ -36,14 +36,14 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
           <div className="absolute w-[1px] h-full bg-divider top-0 left-[7.5rem]"></div>
           <div className="flex flex-col gap-6 ">
             {experience.map((item, index) => (
-              <ExperienceItem key={index} {...item} />
+              <AboutMeExperienceItem key={index} {...item} />
             ))}
           </div>
         </div>
         <div className="flex flex-col gap-4 p-4 border-b border-divider">
           <H2>Skills</H2>
           {skills.map((item, index) => (
-            <SkillItem key={index} {...item} />
+            <AboutMeSkillItem key={index} {...item} />
           ))}
         </div>
         <div className="flex w-full flex-col p-4 gap-4 relative">
@@ -51,7 +51,7 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
           <div className="absolute w-[1px] h-full bg-divider top-0 left-[7.5rem]"></div>
           <div className="flex flex-col gap-6 ">
             {education.map((item, index) => (
-              <ExperienceItem key={index} {...item} />
+              <AboutMeExperienceItem key={index} {...item} />
             ))}
           </div>
         </div>

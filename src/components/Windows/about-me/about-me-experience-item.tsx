@@ -1,8 +1,14 @@
-import { RegularText } from '@components/Texts/RegularText'
-import { SmallText } from '@components/Texts/SmallText'
-import { ExperienceItemProps } from './AboutMeData'
+import { RegularText } from '@components/texts/regular-text'
+import { SmallText } from '@components/texts/small-text'
+import { ExperienceItemProps } from './data'
 
-export const ExperienceItem: React.FC<ExperienceItemProps> = ({ title, company, description, startDate, endDate }) => {
+export const AboutMeExperienceItem: React.FC<ExperienceItemProps> = ({
+  title,
+  company,
+  description,
+  startDate,
+  endDate,
+}) => {
   return (
     <div className="flex gap-[1.125rem]">
       <div className="w-24 flex-grow-0 flex-shrink-0">

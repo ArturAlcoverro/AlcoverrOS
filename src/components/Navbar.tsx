@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
-import { RegularText } from './Texts/RegularText'
-import { IconFactory } from './IconFactory/IconFactory'
-import { Menu } from './Menu/Menu'
+import { IconFactory } from '@components/icon-factory/icon-factory'
+import { useWindows } from '@hooks/use-windows'
 import { useClickAway } from '@uidotdev/usehooks'
-import { useWindows } from '@hooks/useWindows'
+import { useEffect, useState } from 'react'
+import { Menu } from './menu/menu'
+import { RegularText } from './texts/regular-text'
 
 export const Navbar: React.FC<NavbarProps> = () => {
   const [time, setTime] = useState<number>(Date.now())
@@ -42,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
           onClick={clickHandler}
           className="aspect-square h-full border-divider border-r hover:bg-backgroundSecondary box-border flex justify-center items-center"
         >
-          <IconFactory icon="logo" className='fill-font'/>
+          <IconFactory icon="logo" className="fill-font" />
         </button>
         <div className="p-5 flex flex-col justify-center">
           <RegularText className="text-center">{hours12}</RegularText>

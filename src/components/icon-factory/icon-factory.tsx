@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { IconId, IconSize, icons } from './IconData'
+import { IconId, IconSize, icons } from './icon-data'
 
 export const IconFactory: React.FC<IconFactoryProps> = ({ icon, size=48, ...props }) => {
   const Icon = icons[icon][size]

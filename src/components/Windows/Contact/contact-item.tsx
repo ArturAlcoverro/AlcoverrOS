@@ -1,6 +1,6 @@
-import { IconId } from '@components/IconFactory/IconData'
-import { IconFactory } from '@components/IconFactory/IconFactory'
-import { RegularText } from '@components/Texts'
+import { IconId } from '@components/icon-factory/icon-data'
+import { IconFactory } from '@components/icon-factory/icon-factory'
+import { RegularText } from '@components/texts'
 
 export const ContactItem: React.FC<ContactItemProps> = ({ icon, url, name }) => {
   return (

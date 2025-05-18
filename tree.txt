@@ -1,0 +1,238 @@
+.
+├── 1.svg
+├── 2.svg
+├── README.md
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── postcss.config.js
+├── public
+│   └── vite.svg
+├── src
+│   ├── app.tsx
+│   ├── assets
+│   │   ├── fonts
+│   │   │   └── JetBrainsMono-VariableFont_wght.ttf
+│   │   ├── icons
+│   │   │   ├── ArrowLeft
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── ArrowLeft.svg
+│   │   │   ├── ArrowRight
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── ArrowRight.svg
+│   │   │   ├── Bomb
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Bomb.svg
+│   │   │   ├── Cat
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Cat.svg
+│   │   │   ├── ChevronLeft
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── ChevronLeft.svg
+│   │   │   ├── ChevronRight
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── ChevronRight.svg
+│   │   │   ├── Click
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Click.svg
+│   │   │   ├── Close
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Close.svg
+│   │   │   ├── Console
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Console.svg
+│   │   │   ├── Controller
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Controller.svg
+│   │   │   ├── Cursor.svg
+│   │   │   ├── Cursor2.svg
+│   │   │   ├── Folder
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Folder.svg
+│   │   │   ├── Github
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Github.svg
+│   │   │   ├── GithubOutline
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Grid
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Information
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Information.svg
+│   │   │   ├── Instagram
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Instagram.svg
+│   │   │   ├── JordiBarenys
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── JordiBarenys.svg
+│   │   │   ├── Lemon
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Lemon.svg
+│   │   │   ├── Linkedin
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Linkedin.svg
+│   │   │   ├── List
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Logo.svg
+│   │   │   ├── LongArrowLeft
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── LongArrowLeft.svg
+│   │   │   ├── LongArrowRight
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── LongArrowRight.svg
+│   │   │   ├── Mail
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Mail.svg
+│   │   │   ├── Mine
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Mine.svg
+│   │   │   ├── Note
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Note.svg
+│   │   │   ├── PowerOff
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── PowerOff.svg
+│   │   │   ├── Puzzle
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Puzzle.svg
+│   │   │   ├── Settings
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Settings.svg
+│   │   │   ├── Soup
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Soup.svg
+│   │   │   ├── Terminal
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Terminal.svg
+│   │   │   ├── Twitter
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   ├── Twitter.svg
+│   │   │   ├── User
+│   │   │   │   ├── 24.svg
+│   │   │   │   ├── 32.svg
+│   │   │   │   └── 48.svg
+│   │   │   └── User.svg
+│   │   └── images
+│   │       ├── out 1.jpg
+│   │       ├── profile.jpg
+│   │       ├── waves_wallpaper.jpg
+│   │       └── waves_wallpaper_min.jpeg
+│   ├── components
+│   │   ├── background.tsx
+│   │   ├── icon-factory
+│   │   │   ├── icon-data.ts
+│   │   │   └── icon-factory.tsx
+│   │   ├── menu
+│   │   │   ├── menu-action.tsx
+│   │   │   ├── menu-data.ts
+│   │   │   ├── menu-section.tsx
+│   │   │   ├── menu.css
+│   │   │   └── menu.tsx
+│   │   ├── navbar.tsx
+│   │   ├── texts
+│   │   │   ├── h1.tsx
+│   │   │   ├── h2.tsx
+│   │   │   ├── index.ts
+│   │   │   ├── regular-text.tsx
+│   │   │   └── small-text.tsx
+│   │   └── windows
+│   │       ├── about-me
+│   │       │   ├── about-me-experience-item.tsx
+│   │       │   ├── about-me-skill-item.tsx
+│   │       │   ├── about-me.tsx
+│   │       │   └── data.tsx
+│   │       ├── contact
+│   │       │   ├── contact-item.tsx
+│   │       │   └── contact.tsx
+│   │       ├── desktop.css
+│   │       ├── desktop.tsx
+│   │       ├── file-explorer
+│   │       │   └── file-explorer.tsx
+│   │       ├── window-container.tsx
+│   │       └── window-factory.tsx
+│   ├── hooks
+│   │   ├── store.ts
+│   │   ├── use-explorer.ts
+│   │   └── use-windows.ts
+│   ├── main.tsx
+│   ├── store
+│   │   ├── explorer
+│   │   │   └── types.ts
+│   │   ├── index.ts
+│   │   └── windows
+│   │       ├── types.ts
+│   │       ├── window-factory.ts
+│   │       ├── window-reducer.ts
+│   │       └── window-slice.ts
+│   ├── styles
+│   │   ├── colors.css
+│   │   ├── fonts.css
+│   │   └── index.css
+│   └── vite-env.d.ts
+├── tailwind.config.js
+├── tree.txt
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts

@@ -1,5 +1,5 @@
-import { MenuActionProps } from './MenuAction'
-import { MenuSection } from './MenuSection'
+import { MenuActionProps } from "./menu-action"
+import { MenuSection } from "./menu-section"
 
 export const sections: MenuSection[] = [
   {

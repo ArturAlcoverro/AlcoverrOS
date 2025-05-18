@@ -1,4 +1,4 @@
-import { IconFactory } from '@components/IconFactory/IconFactory'
+import { IconFactory } from '@components/icon-factory/icon-factory'
 
 export const FileExplorer: React.FC<FileExplorerProps> = () => {
   return (

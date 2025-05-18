@@ -46,7 +46,7 @@
   },
   "include": [
     "src",
-    "src/components/Windows/WindowContainer.tsx",
+    "src/components/windows/window-container.tsx",
   ],
   "references": [
     {

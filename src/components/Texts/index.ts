@@ -1,4 +1,4 @@
-export { H1 } from './H1'
-export { H2 } from './H2'
-export { RegularText } from './RegularText'
-export { SmallText } from './SmallText'
+export { H1 } from './h1'
+export { H2 } from './h2'
+export { RegularText } from './regular-text'
+export { SmallText } from './small-text'

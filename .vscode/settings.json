@@ -3,6 +3,10 @@
     "source.fixAll.eslint": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#ff9f51",
+    "titleBar.inactiveBackground": "#ff9f51",
+    "titleBar.activeForeground": "#000000",
+    "titleBar.inactiveForeground": "#3b3b3b"
+  }
 }

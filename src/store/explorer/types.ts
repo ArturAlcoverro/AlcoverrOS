@@ -1,5 +1,5 @@
-import { IconId } from '@components/IconFactory/IconData'
-import { WindowKey } from '@store/windows/windowsTypes/WindowKey'
+import { IconId } from '@components/icon-factory/icon-data'
+import { WindowKey } from '@store/windows/types'
 
 interface IExplorerItem {
   type: 'file' | 'folder'

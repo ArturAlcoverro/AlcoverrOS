@@ -1,4 +1,4 @@
-import { Folder, File } from '@store/explorer/explorerTypes'
+import { Folder, File } from '@store/explorer/types'
 
 export const useExplorer = () => {
   function _getItem(pathArray: string[], folder: Folder) {
@@ -21,7 +21,7 @@ export const useExplorer = () => {
 
   function _getFavorites(arr: Array<Folder>, folder: Folder) {
     if (folder.favorite) arr.push(folder)
-     folder.items.forEach((item) => {
+    folder.items.forEach((item) => {
       if (item instanceof Folder) {
         _getFavorites(arr, item)
       }

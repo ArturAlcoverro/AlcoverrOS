@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Window, WindowCoords } from '@store/windows/windowsTypes/Window'
-import { SmallText } from '../Texts/SmallText'
+import { Window, WindowCoords } from '@store/windows/types'
+import { SmallText } from '../texts/small-text'
 
 import Draggable, { DraggableEventHandler } from 'react-draggable' // The default
 import { Resizable, ResizeCallback, ResizeStartCallback } from 're-resizable'
-import { useWindows } from '@hooks/useWindows'
-import { IconFactory } from '@components/IconFactory/IconFactory'
+import { useWindows } from '@hooks/use-windows'
+import { IconFactory } from '@components/icon-factory/icon-factory'
 
 interface WindowContainerProps {
   windowItem: Window

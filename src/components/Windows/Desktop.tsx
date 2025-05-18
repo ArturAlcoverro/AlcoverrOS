@@ -1,21 +1,20 @@
-import { useWindows } from '@hooks/useWindows'
-import { WindowKey } from '@store/windows/windowsTypes/WindowKey'
-import { RegularText } from '../Texts/RegularText'
-import { IconFactory } from '../IconFactory/IconFactory'
-import { WindowFactory } from './WindowFactory'
+import { IconFactory } from '@components/icon-factory/icon-factory'
+import { RegularText } from '@components/texts/regular-text'
+import '@components/windows/desktop.css'
+import { WindowFactory } from '@components/windows/window-factory'
+import { useExplorer } from '@hooks/use-explorer'
+import { useWindows } from '@hooks/use-windows'
+import { File, Folder } from '@store/explorer/types'
+import { WindowKey } from '@store/windows/types'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-
-import './Desktop.css'
-import { useExplorer } from '@hooks/useExplorer'
-import { Folder, File } from '@store/explorer/explorerTypes'
 
 export const WindowManager: React.FC<WindowManagerProps> = () => {
   const { windows, openWindow } = useWindows()
   const { getItem } = useExplorer()
   const desktop = getItem('/desktop')
   const desktopItems = []
-  
-  if(desktop instanceof Folder){
+
+  if (desktop instanceof Folder) {
     desktopItems.push(...desktop.items)
   }
 

@@ -1,8 +1,7 @@
-import { PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction } from '@reduxjs/toolkit';
 
-import { WindowCoords, WindowSize, Window } from './windowsTypes/Window'
-import { WindowKey } from './windowsTypes/WindowKey'
-import { WindowFactory } from './windowsTypes/WindowFactory';
+import { Window, WindowCoords, WindowKey, WindowSize } from './types';
+import { WindowFactory } from './window-factory';
 
 function getWindow(windows: Window[], key: WindowKey): Window | undefined {
   return windows.find((w) => w.key.id === key.id)
@@ -49,7 +48,7 @@ export function openReducer(state: Window[], action: PayloadAction<WindowKey>) {
   if (!window) {
     state.push(WindowFactory(key))
   }
-  
+
   return bringFront(state, key)
 }
 
@@ -147,7 +146,7 @@ function order(state: Window[]): Window[] {
   }
 
   if (state.length > 0) {
-    state[state.length-1].focused = true
+    state[state.length - 1].focused = true
   }
 
   return state

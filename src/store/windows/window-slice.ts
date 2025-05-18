@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { moveReducer, openReducer, closeReducer, resizeReducer, focusReducer, unfocusAllReducer } from './windowsReducers'
-import { Window } from './windowsTypes/Window'
+import { moveReducer, openReducer, closeReducer, resizeReducer, focusReducer, unfocusAllReducer } from './window-reducer'
+import { Window } from './types'
 
 const initialState: Window[] = []
 
