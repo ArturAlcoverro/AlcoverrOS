@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --blur: 4px
+  --blur: 4px;
 }
 
 .scrollbar-hidden::-webkit-scrollbar {

@@ -1,7 +1,6 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-
-import { Window, WindowCoords, WindowKey, WindowSize } from './types';
-import { WindowFactory } from './window-factory';
+import { PayloadAction } from '@reduxjs/toolkit'
+import { Window, WindowCoords, WindowKey, WindowSize } from './types'
+import { WindowFactory } from './window-factory'
 
 function getWindow(windows: Window[], key: WindowKey): Window | undefined {
   return windows.find((w) => w.key.id === key.id)
@@ -9,9 +8,6 @@ function getWindow(windows: Window[], key: WindowKey): Window | undefined {
 
 /**
  * Save the window cordd (useful for minimize and maximize features)
- * @param state
- * @param action
- * @returns
  */
 export function moveReducer(state: Window[], action: PayloadAction<{ key: WindowKey; cords: WindowCoords }>) {
   const { key, cords } = action.payload
@@ -24,23 +20,11 @@ export function moveReducer(state: Window[], action: PayloadAction<{ key: Window
   return state
 }
 
-/**
- * Close a window
- * @param state
- * @param action
- * @returns
- */
 export function closeReducer(state: Window[], action: PayloadAction<WindowKey>) {
   const key = action.payload
   return state.filter((w) => w.key.id !== key.id)
 }
 
-/**
- * Close a window
- * @param state
- * @param action
- * @returns
- */
 export function openReducer(state: Window[], action: PayloadAction<WindowKey>) {
   const key = action.payload
   const window = getWindow(state, key)
@@ -54,9 +38,6 @@ export function openReducer(state: Window[], action: PayloadAction<WindowKey>) {
 
 /**
  * Save the window size (useful for minimize and maximize features)
- * @param state
- * @param action
- * @returns
  */
 export function resizeReducer(state: Window[], action: PayloadAction<{ key: WindowKey; size: WindowSize }>) {
   const { key, size } = action.payload
@@ -69,12 +50,6 @@ export function resizeReducer(state: Window[], action: PayloadAction<{ key: Wind
   return state
 }
 
-/**
- * Focus a window by WindowKey
- * @param state
- * @param action
- * @returns
- */
 export function focusReducer(state: Window[], action: PayloadAction<{ key?: WindowKey }>) {
   let key = action.payload.key ?? null
 
@@ -90,23 +65,11 @@ export function focusReducer(state: Window[], action: PayloadAction<{ key?: Wind
   return state
 }
 
-/**
- * Unfocus all windows
- * @param state
- * @returns
- */
 export function unfocusAllReducer(state: Window[]) {
   return state.map((w) => ({ ...w, focused: false }))
 }
 
-/**
- * Bring a window to front
- * @param state
- * @param action
- * @returns
- */
 function bringFront(state: Window[], key: WindowKey): Window[] {
-
   const window = getWindow(state, key)
 
   if (window) {
@@ -116,13 +79,6 @@ function bringFront(state: Window[], key: WindowKey): Window[] {
   return order(state)
 }
 
-/**
- * Bring a window to back
- * @param state
- * @param action
- * @returns
- */
-// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
 function bringBack(state: Window[], key: WindowKey): Window[] {
   const window = getWindow(state, key)
 
@@ -132,22 +88,17 @@ function bringBack(state: Window[], key: WindowKey): Window[] {
   return order(state)
 }
 
-/**
- * Calculate the zIndex of all windows
- * @param state
- * @returns
- */
 function order(state: Window[]): Window[] {
-  state = state.sort((a, b) => a.zIndex - b.zIndex)
+  const newState = state.sort((a, b) => a.zIndex - b.zIndex)
 
-  for (let i = 0; i < state.length; i++) {
-    state[i].zIndex = i
-    state[i].focused = false
+  for (let i = 0; i < newState.length; i++) {
+    newState[i].zIndex = 1
+    newState[i].focused = false
   }
 
-  if (state.length > 0) {
-    state[state.length - 1].focused = true
+  if (newState.length > 0) {
+    newState[newState.length - 1].focused = true
   }
 
-  return state
+  return newState
 }

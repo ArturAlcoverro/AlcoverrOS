@@ -1,11 +1,13 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
-// import { data } from './MenuData'
 import { CSSTransition } from 'react-transition-group'
 import { H1 } from '../texts'
-import { sections, actions } from './menu-data'
-import './Menu.css'
-import { MenuSection } from './menu-section'
 import { MenuAction } from './menu-action'
+import { actions, sections } from './menu-data'
+import { MenuSection } from './menu-section'
+import './Menu.css'
+
+type MenuProps = {
+  open: boolean
+}
 
 export const Menu: React.FC<MenuProps> = ({ open }) => {
   return (
@@ -13,7 +15,7 @@ export const Menu: React.FC<MenuProps> = ({ open }) => {
       in={open}
       timeout={{
         enter: 1250,
-        exit: 0,
+        exit: 0
       }}
       classNames="menu-animation"
     >
@@ -40,8 +42,4 @@ export const Menu: React.FC<MenuProps> = ({ open }) => {
       </div>
     </CSSTransition>
   )
-}
-
-interface MenuProps {
-  open: boolean
 }

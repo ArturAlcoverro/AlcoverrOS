@@ -1,4 +1,3 @@
-
 import { Window, WindowId, WindowKey } from './types'
 
 type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>
@@ -10,22 +9,22 @@ type PartialWindow = Omit<PartialBy<Window, WindowOptionalProps>, 'url' | 'zInde
 const windowsData: Record<WindowId, Omit<PartialWindow, 'key'>> = {
   about: {
     title: 'About',
-    minSize: { width: 400, height: 400 },
+    minSize: { width: 400, height: 400 }
   },
   work: {
-    title: 'Work',
+    title: 'Work'
   },
   contact: {
     title: 'Contact',
     defaultSize: { width: 450, height: 300 },
-    minSize: { width: 450, height: 300 },
+    minSize: { width: 450, height: 300 }
   },
   explorer: {
-    title: 'Explorer',
+    title: 'Explorer'
   },
   project: {
-    title: 'Project',
-  },
+    title: 'Project'
+  }
 }
 
 export const WindowFactory = (windowKey: WindowKey): Window => {
@@ -40,6 +39,6 @@ export const WindowFactory = (windowKey: WindowKey): Window => {
     defaultSize: window.defaultSize || { width: 600, height: 600 },
     zIndex: 0,
     minimized: false,
-    focused: false,
+    focused: false
   }
 }
