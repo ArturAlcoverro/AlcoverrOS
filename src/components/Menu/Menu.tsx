@@ -19,15 +19,15 @@ export const Menu: React.FC<MenuProps> = ({ open }) => {
       }}
       classNames="menu-animation"
     >
-      <div className="overflow-hidden w-[30rem] flex opacity-0 bg-backgroundOpaque backdrop-blur-sm absolute bottom-full border border-l-0 border-b-0 border-divider box-border">
-        <div className="border-r border-divider w-14 flex-grow-0 relative">
-          <div className="w-full h-full origin-top-left absolute -rotate-90 top-full pt-[.1875rem] pl-[1.25rem]">
+      <div className="overflow-hidden w-120 flex opacity-0 bg-background-opaque backdrop-blur-xs absolute bottom-full border border-l-0 border-b-0 border-divider box-border">
+        <div className="border-r border-divider w-14 grow-0 relative">
+          <div className="w-full h-full origin-top-left absolute -rotate-90 top-full pt-[.1875rem] pl-5">
             <H1 className="whitespace-nowrap">
-              Artur Alcoverro <span className="text-fontSecondary">{'// Frontend Dev'}</span>
+              Artur Alcoverro <span className="text-font-secondary">{'// Frontend Dev'}</span>
             </H1>
           </div>
         </div>
-        <div className="flex flex-grow flex-col relative">
+        <div className="flex grow flex-col relative">
           <div className="absolute h-full w-full overflow-y-scroll scrollbar-hidden">
             {sections.map((section) => (
               <MenuSection key={section.title} data={section} />

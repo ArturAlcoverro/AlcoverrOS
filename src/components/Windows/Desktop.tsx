@@ -1,6 +1,5 @@
 import { IconFactory } from '@components/icon-factory/icon-factory'
 import { RegularText } from '@components/texts/regular-text'
-import '@components/windows/desktop.css'
 import { WindowFactory } from '@components/windows/window-factory'
 import { useExplorer } from '@hooks/use-explorer'
 import { useWindows } from '@hooks/use-windows'
@@ -36,7 +35,7 @@ export const WindowManager: React.FC = () => {
             <button
               onClick={desktopItemsClickHandler(key)}
               key={item.name}
-              className="group h-24 w-24 border border-divider px-6 pt-[14px] pb-[7px] -mb-[1px] flex flex-col justify-center items-center gap-[6px]"
+              className="group h-24 w-24 border border-divider px-6 pt-[14px] pb-[7px] -mb-px flex flex-col justify-center items-center gap-[6px]"
             >
               <IconFactory
                 icon={item.icon}
@@ -47,12 +46,12 @@ export const WindowManager: React.FC = () => {
           )
         })}
       </div>
-      {/* <div className="h-[calc(100%+2px)] w-[calc(100%+2px)] relative -top-[1px] -left-[1px] pointer-events-none">
+      {/* <div className="h-[calc(100%+2px)] w-[calc(100%+2px)] relative -top-px -left-px pointer-events-none">
         <AnimatePresence></AnimatePresence>
       </div> */}
       <div
         ref={dragContainerRef}
-        className="h-[calc(100%+2px)] w-[calc(100%+2px)] relative -top-[1px] -left-[1px] pointer-events-none"
+        className="h-[calc(100%+2px)] w-[calc(100%+2px)] relative -top-px -left-px pointer-events-none"
       >
         <AnimatePresence>
           {windows.map((window) => (

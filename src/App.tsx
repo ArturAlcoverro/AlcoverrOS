@@ -4,7 +4,7 @@ import { WindowManager } from '@components/windows/desktop'
 
 export default function App() {
   return (
-    <div className="h-[100dvh]">
+    <div className="h-dvh">
       <Background />
       <div className="absolute flex w-full h-full flex-col">
         <div className="grow">

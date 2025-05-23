@@ -1,7 +1,7 @@
 import { IconFactory } from '@components/icon-factory/icon-factory'
 import { useWindows } from '@hooks/use-windows'
 import { Window, WindowCoords } from '@store/windows/types'
-import { motion } from 'motion/react'
+import { motion, TargetAndTransition } from 'motion/react'
 import { Resizable, ResizeCallback, ResizeStartCallback } from 're-resizable'
 import React, { useState } from 'react'
 import Draggable, { DraggableEventHandler } from 'react-draggable' // The default
@@ -63,6 +63,17 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
     closeWindow(windowItem.key)
   }
 
+  const onCloseStyles: TargetAndTransition = {
+    opacity: 0,
+    filter: 'blur(0px)',
+    scale: 0.95
+  }
+  const onOpenStyles: TargetAndTransition = {
+    opacity: 1,
+    filter: 'blur(0px)',
+    scale: 1
+  }
+
   return (
     <Draggable
       handle=".drag"
@@ -82,18 +93,14 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
         defaultSize={windowItem.size}
         minHeight={windowItem.minSize.height}
         minWidth={windowItem.minSize.width}
-        className={`!absolute flex flex-col  pointer-events-auto`}
+        className={`absolute! flex flex-col pointer-events-auto`}
       >
         <motion.div
-          style={{
-            transformOrigin: 'top',
-            perspective: '1000px'
-          }}
-          initial={{ opacity: 1, filter: 'blur(4px)', scale: 0.95, rotateX: 45 }}
-          animate={{ opacity: 1, filter: 'blur(0px)', scale: 1, rotateX: 0 }}
-          exit={{ opacity: 1, filter: 'blur(4px)', scale: 0.95, rotateX: -45 }}
-          transition={{ duration: 0.3 }}
-          className="window-animation-container absolute h-full w-full flex flex-col border border-divider backdrop-blur-[var(--blur)] bg-backgroundOpaque"
+          initial={onCloseStyles}
+          animate={onOpenStyles}
+          exit={onCloseStyles}
+          transition={{ duration: 0.25, bounce: 1 }}
+          className="absolute h-full w-full flex flex-col border border-divider backdrop-blur-(--blur) bg-background-opaque"
         >
           <div
             role="button"
@@ -113,7 +120,7 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
                 onClick={closeWindowHandler}
                 icon="close"
                 size={48}
-                className="w-full aspect-square h-auto p-[0.125rem] fill-font stroke-font group-hover:stroke-accent"
+                className="w-full aspect-square h-auto p-0.5 fill-font stroke-font group-hover:stroke-accent"
               />
             </button>
           </div>
@@ -127,15 +134,8 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
           >
             {children}
           </div>
-
-          {!windowItem.focused && (
-            <div className="absolute h-[calc(100%+4px)] w-[calc(100%+4px)] -top-[2px] -left-[2px] bg-black opacity-50 pointer-events-none"></div>
-          )}
         </motion.div>
       </Resizable>
-      {/* <div className="!absolute flex flex-col border border-divider backdrop-blur-[var(--blur)] bg-backgroundOpaque pointer-events-auto">
-
-      </div> */}
     </Draggable>
   )
 }

@@ -1,5 +1,5 @@
 export const SmallText: React.FC<SmallTextProps> = ({ children, secondary = false, ...props }) => {
-  const color = secondary ? 'text-fontSecondary' : 'text-font'
+  const color = secondary ? 'text-font-secondary' : 'text-font'
 
   const className = props.className || ''
   delete props.className

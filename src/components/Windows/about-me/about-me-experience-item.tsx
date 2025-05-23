@@ -10,15 +10,15 @@ export const AboutMeExperienceItem: React.FC<ExperienceItemProps> = ({
   endDate
 }) => {
   return (
-    <div className="flex gap-[1.125rem]">
-      <div className="w-24 flex-grow-0 flex-shrink-0">
+    <div className="flex gap-4.5">
+      <div className="w-24 grow-0 shrink-0">
         <SmallText secondary className="text-right">
           {startDate} - {endDate}
         </SmallText>
       </div>
-      <div className="flex-grow">
+      <div className="grow">
         <RegularText>
-          {title} <span className="text-fontSecondary">at {company}</span>
+          {title} <span className="text-font-secondary">at {company}</span>
         </RegularText>
         {description && (
           <SmallText className="mt-2" secondary>

@@ -9,7 +9,7 @@ import { education, experience, skills } from './data'
 export const AboutMe: React.FC = () => {
   return (
     <div className="h-full">
-      <div className="flex m-auto flex-col w-[calc(100%+2px)] relative left-[-1px] h-full max-w-[50rem] border-x border-divider overflow-y-auto scrollbar-hidden">
+      <div className="flex m-auto flex-col w-[calc(100%+2px)] relative -left-px h-full max-w-200 border-x border-divider overflow-y-auto scrollbar-hidden">
         <div className="flex border-b w-full border-divider gap-4">
           <img
             src={profile}
@@ -33,7 +33,7 @@ export const AboutMe: React.FC = () => {
         </div>
         <div className="flex  w-full border-b border-divider flex-col p-4 gap-4 relative">
           <H2 className="pl-[113px]">Experience</H2>
-          <div className="absolute w-[1px] h-full bg-divider top-0 left-[7.5rem]"></div>
+          <div className="absolute w-px h-full bg-divider top-0 left-30"></div>
           <div className="flex flex-col gap-6 ">
             {experience.map((item, index) => (
               <AboutMeExperienceItem key={index} {...item} />
@@ -48,7 +48,7 @@ export const AboutMe: React.FC = () => {
         </div>
         <div className="flex w-full flex-col p-4 gap-4 relative">
           <H2 className="pl-[113px]">Education</H2>
-          <div className="absolute w-[1px] h-full bg-divider top-0 left-[7.5rem]"></div>
+          <div className="absolute w-px h-full bg-divider top-0 left-30"></div>
           <div className="flex flex-col gap-6 ">
             {education.map((item, index) => (
               <AboutMeExperienceItem key={index} {...item} />

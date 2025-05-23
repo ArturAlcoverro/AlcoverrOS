@@ -11,7 +11,7 @@ export const MenuSection: React.FC<MenuSectionProps> = ({ data }) => {
           <IconFactory
             icon={item.icon}
             size={24}
-            className="stroke-fontSecondary relative left-0 group-hover:stroke-font transition-all"
+            className="stroke-font-secondary relative left-0 group-hover:stroke-font transition-all"
           />
           <RegularText secondary className="relative left-0 group-hover:text-font transition-all">
             {item.title}

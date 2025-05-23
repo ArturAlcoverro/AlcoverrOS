@@ -36,11 +36,11 @@ export const Navbar: React.FC = () => {
 
   return (
     <div className="relative">
-      <nav className="backdrop-blur-[var(--blur)] bg-backgroundOpaque grow-0 h-20 border-divider border-t flex justify-between">
+      <nav className="backdrop-blur-(--blur) bg-background-opaque grow-0 h-20 border-divider border-t flex justify-between">
         <button
           ref={ref}
           onClick={clickHandler}
-          className="aspect-square h-full border-divider border-r hover:bg-backgroundSecondary box-border flex justify-center items-center"
+          className="aspect-square h-full border-divider border-r hover:bg-background-secondary box-border flex justify-center items-center"
         >
           <IconFactory icon="logo" className="fill-font" />
         </button>
