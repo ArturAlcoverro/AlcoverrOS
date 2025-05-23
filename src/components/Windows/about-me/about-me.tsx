@@ -1,12 +1,12 @@
 import profile from '@assets/images/profile.jpg'
+import { H2 } from '@components/texts/h2'
 import { RegularText } from '@components/texts/regular-text'
 import { SmallText } from '@components/texts/small-text'
 import { AboutMeExperienceItem } from './about-me-experience-item'
 import { AboutMeSkillItem } from './about-me-skill-item'
-import { H2 } from '@components/texts/h2'
-import { experience, skills, education } from './data'
+import { education, experience, skills } from './data'
 
-export const AboutMe: React.FC<AboutMeProps> = () => {
+export const AboutMe: React.FC = () => {
   return (
     <div className="h-full">
       <div className="flex m-auto flex-col w-[calc(100%+2px)] relative left-[-1px] h-full max-w-[50rem] border-x border-divider overflow-y-auto scrollbar-hidden">
@@ -59,7 +59,5 @@ export const AboutMe: React.FC<AboutMeProps> = () => {
     </div>
   )
 }
-
-interface AboutMeProps {}
 
 export default AboutMe

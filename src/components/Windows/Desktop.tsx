@@ -6,13 +6,15 @@ import { useExplorer } from '@hooks/use-explorer'
 import { useWindows } from '@hooks/use-windows'
 import { File, Folder } from '@store/explorer/types'
 import { WindowKey } from '@store/windows/types'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { AnimatePresence } from 'motion/react'
+import { useRef } from 'react'
 
-export const WindowManager: React.FC<WindowManagerProps> = () => {
+export const WindowManager: React.FC = () => {
   const { windows, openWindow } = useWindows()
   const { getItem } = useExplorer()
   const desktop = getItem('/desktop')
   const desktopItems = []
+  const dragContainerRef = useRef<HTMLDivElement>(null)
 
   if (desktop instanceof Folder) {
     desktopItems.push(...desktop.items)
@@ -45,15 +47,19 @@ export const WindowManager: React.FC<WindowManagerProps> = () => {
           )
         })}
       </div>
-      <TransitionGroup className="h-[calc(100%+2px)] w-[calc(100%+2px)] relative -top-[1px] -left-[1px] pointer-events-none">
-        {windows.map((window) => (
-          <CSSTransition key={window.url} timeout={250} classNames="window-animation">
-            <WindowFactory windowKey={window.key} window={window} />
-          </CSSTransition>
-        ))}
-      </TransitionGroup>
+      {/* <div className="h-[calc(100%+2px)] w-[calc(100%+2px)] relative -top-[1px] -left-[1px] pointer-events-none">
+        <AnimatePresence></AnimatePresence>
+      </div> */}
+      <div
+        ref={dragContainerRef}
+        className="h-[calc(100%+2px)] w-[calc(100%+2px)] relative -top-[1px] -left-[1px] pointer-events-none"
+      >
+        <AnimatePresence>
+          {windows.map((window) => (
+            <WindowFactory key={window.url} window={window} />
+          ))}
+        </AnimatePresence>
+      </div>
     </div>
   )
 }
-
-interface WindowManagerProps {}

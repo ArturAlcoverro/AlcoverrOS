@@ -23,7 +23,7 @@ export const Menu: React.FC<MenuProps> = ({ open }) => {
         <div className="border-r border-divider w-14 flex-grow-0 relative">
           <div className="w-full h-full origin-top-left absolute -rotate-90 top-full pt-[.1875rem] pl-[1.25rem]">
             <H1 className="whitespace-nowrap">
-              Artur Alcoverro <span className="text-fontSecondary">// Frontend Dev</span>
+              Artur Alcoverro <span className="text-fontSecondary">{'// Frontend Dev'}</span>
             </H1>
           </div>
         </div>

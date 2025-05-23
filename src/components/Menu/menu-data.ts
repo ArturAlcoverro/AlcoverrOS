@@ -1,5 +1,5 @@
-import { MenuActionProps } from "./menu-action"
-import { MenuSection } from "./menu-section"
+import { MenuActionProps } from './menu-action'
+import { MenuSection } from './menu-section'
 
 export const sections: MenuSection[] = [
   {
@@ -10,10 +10,10 @@ export const sections: MenuSection[] = [
         icon: 'user',
         type: 'window',
         data: {
-          window: 'about',
-        },
-      },
-    ],
+          window: 'about'
+        }
+      }
+    ]
   },
   {
     title: 'My works',
@@ -23,66 +23,66 @@ export const sections: MenuSection[] = [
         icon: 'note',
         type: 'window',
         data: {
-          window: 'about',
-        },
+          window: 'about'
+        }
       },
       {
         title: 'Riddle',
         icon: 'puzzle',
         type: 'window',
         data: {
-          window: 'about',
-        },
+          window: 'about'
+        }
       },
       {
         title: 'Jordi Barenys Haya',
         icon: 'jordiBarenys',
         type: 'window',
         data: {
-          window: 'about',
-        },
+          window: 'about'
+        }
       },
       {
         title: 'Artio',
         icon: 'cat',
         type: 'window',
         data: {
-          window: 'about',
-        },
+          window: 'about'
+        }
       },
       {
         title: 'Ana Llimona',
         icon: 'lemon',
         type: 'window',
         data: {
-          window: 'about',
-        },
+          window: 'about'
+        }
       },
       {
         title: 'Master Clicker',
         icon: 'click',
         type: 'window',
         data: {
-          window: 'about',
-        },
+          window: 'about'
+        }
       },
       {
         title: 'HOTSup',
         icon: 'soup',
         type: 'window',
         data: {
-          window: 'about',
-        },
+          window: 'about'
+        }
       },
       {
         title: 'Cooked Fig Pattern',
         icon: 'soup',
         type: 'window',
         data: {
-          window: 'about',
-        },
-      },
-    ],
+          window: 'about'
+        }
+      }
+    ]
   },
   {
     title: 'Contact',
@@ -92,48 +92,48 @@ export const sections: MenuSection[] = [
         icon: 'linkedin',
         type: 'link',
         data: {
-          window: 'about',
-        },
+          window: 'about'
+        }
       },
       {
         title: 'Github',
         icon: 'github',
         type: 'link',
         data: {
-          window: 'about',
-        },
+          window: 'about'
+        }
       },
       {
         title: 'Twitter',
         icon: 'twitter',
         type: 'link',
         data: {
-          window: 'about',
-        },
+          window: 'about'
+        }
       },
       {
         title: 'Mail',
         icon: 'mail',
         type: 'link',
         data: {
-          window: 'about',
-        },
-      },
-    ],
-  },
+          window: 'about'
+        }
+      }
+    ]
+  }
 ]
 
 export const actions: MenuActionProps[] = [
   {
     icon: 'settings',
-    action: () => console.log('settings'),
+    action: () => console.log('settings')
   },
   {
     icon: 'information',
-    action: () => console.log('information'),
+    action: () => console.log('information')
   },
   {
     icon: 'powerOff',
-    action: () => console.log('powerOff'),
-  },
+    action: () => console.log('powerOff')
+  }
 ]

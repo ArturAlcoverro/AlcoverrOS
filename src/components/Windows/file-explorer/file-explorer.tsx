@@ -1,6 +1,6 @@
 import { IconFactory } from '@components/icon-factory/icon-factory'
 
-export const FileExplorer: React.FC<FileExplorerProps> = () => {
+export const FileExplorer: React.FC = () => {
   return (
     <div className="h-full w-full flex flex-col">
       <div className="flex flex-grow-0 border-b border-divider">
@@ -28,7 +28,5 @@ export const FileExplorer: React.FC<FileExplorerProps> = () => {
     </div>
   )
 }
-
-interface FileExplorerProps {}
 
 export default FileExplorer

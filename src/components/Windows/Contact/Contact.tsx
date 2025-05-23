@@ -4,26 +4,26 @@ const items: ContactItemProps[] = [
   {
     url: 'https://www.linkedin.com/in/artur-alcoverro/',
     icon: 'linkedin',
-    name: 'LinkedIn',
+    name: 'LinkedIn'
   },
   {
     url: 'https://twitter.com/ArturAlcoverro',
     icon: 'twitter',
-    name: 'Twitter',
+    name: 'Twitter'
   },
   {
     url: 'https://github.com/ArturAlcoverro',
     icon: 'github',
-    name: 'GitHub',
+    name: 'GitHub'
   },
   {
     url: 'mailto:artur.bcn1998@gmail.com',
     icon: 'mail',
-    name: 'Mail',
-  },
+    name: 'Mail'
+  }
 ]
 
-export const Contact: React.FC<ContactProps> = () => {
+export const Contact: React.FC = () => {
   return (
     <div className="h-full w-full flex items-center justify-center">
       {items.map((item) => (
@@ -32,7 +32,5 @@ export const Contact: React.FC<ContactProps> = () => {
     </div>
   )
 }
-
-interface ContactProps {}
 
 export default Contact

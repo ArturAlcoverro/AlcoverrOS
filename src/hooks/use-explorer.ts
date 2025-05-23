@@ -1,4 +1,4 @@
-import { Folder, File } from '@store/explorer/types'
+import { File, Folder } from '@store/explorer/types'
 
 export const useExplorer = () => {
   function _getItem(pathArray: string[], folder: Folder) {
@@ -39,7 +39,7 @@ export const useExplorer = () => {
 const root = Folder.create({
   name: 'root',
   icon: 'folder',
-  path: '/',
+  path: '/'
 })
 
 root.addFolder(
@@ -47,43 +47,43 @@ root.addFolder(
     name: 'Desktop',
     icon: 'folder',
     path: '/desktop',
-    favorite: true,
+    favorite: true
   })
     .addFile(
       File.create({
         name: 'Contact',
         icon: 'mail',
         path: '/contact',
-        window: { id: 'contact' },
-      }),
+        window: { id: 'contact' }
+      })
     )
     .addFile(
       File.create({
         name: 'About',
         icon: 'user',
         path: '/resume',
-        window: { id: 'about' },
-      }),
+        window: { id: 'about' }
+      })
     )
     .addFolder(
       Folder.create({
         name: 'Work',
         icon: 'folder',
-        path: '/work',
+        path: '/work'
       }).addFile(
         File.create({
           name: 'CleaNotes',
           icon: 'note',
           path: '/cleanotes',
-          window: { id: 'project', data: 'cleanotes' },
-        }),
-      ),
+          window: { id: 'project', data: 'cleanotes' }
+        })
+      )
     )
     .addFolder(
       Folder.create({
         name: 'Games',
         icon: 'controller',
-        path: '/games',
-      }),
-    ),
+        path: '/games'
+      })
+    )
 )

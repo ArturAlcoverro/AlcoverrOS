@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { Menu } from './menu/menu'
 import { RegularText } from './texts/regular-text'
 
-export const Navbar: React.FC<NavbarProps> = () => {
+export const Navbar: React.FC = () => {
   const [time, setTime] = useState<number>(Date.now())
   const [open, setOpen] = useState<boolean>(false)
   const { unfocusAllWindows, focusWindow } = useWindows()
@@ -53,5 +53,3 @@ export const Navbar: React.FC<NavbarProps> = () => {
     </div>
   )
 }
-
-interface NavbarProps {}

@@ -7,7 +7,7 @@ export const AboutMeExperienceItem: React.FC<ExperienceItemProps> = ({
   company,
   description,
   startDate,
-  endDate,
+  endDate
 }) => {
   return (
     <div className="flex gap-[1.125rem]">

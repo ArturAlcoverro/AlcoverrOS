@@ -1,4 +1,3 @@
-
 type BaseWindowId = 'about' | 'work' | 'contact' | 'explorer'
 type ProjectWindowId = 'project'
 
@@ -14,7 +13,6 @@ interface ProjectWindowKey {
 }
 
 export type WindowKey = BaseWindowKey | ProjectWindowKey
-
 
 export interface Window {
   key: WindowKey
@@ -38,4 +36,3 @@ export type WindowSize = {
   width: number
   height: number
 }
-
