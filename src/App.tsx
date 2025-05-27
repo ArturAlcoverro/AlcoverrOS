@@ -1,17 +1,23 @@
 import { Background } from '@components/background'
+import { Cursor } from '@components/cursor/cursor'
+import { ErrorBoundary } from '@components/error-boundary'
 import { Navbar } from '@components/navbar'
-import { WindowManager } from '@components/windows/desktop'
+import { Screen } from '@components/screen'
+import { Desktop } from '@components/windows/desktop'
 
 export default function App() {
   return (
-    <div className="h-dvh">
-      <Background />
-      <div className="absolute flex w-full h-full flex-col">
-        <div className="grow">
-          <WindowManager />
+    <ErrorBoundary fallback={<p>Oops, something went wrong.</p>}>
+      <Screen>
+        <Cursor />
+        <Background />
+        <div className="absolute flex w-full h-full flex-col">
+          <div className="grow">
+            <Desktop />
+          </div>
+          <Navbar />
         </div>
-        <Navbar />
-      </div>
-    </div>
+      </Screen>
+    </ErrorBoundary>
   )
 }

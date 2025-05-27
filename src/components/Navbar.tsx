@@ -1,14 +1,16 @@
 import { IconFactory } from '@components/icon-factory/icon-factory'
-import { useWindows } from '@hooks/use-windows'
+import { useWindowsStore } from '@store/windows/windows-store'
 import { useClickAway } from '@uidotdev/usehooks'
 import { useEffect, useState } from 'react'
+import { useShallow } from 'zustand/shallow'
 import { Menu } from './menu/menu'
 import { RegularText } from './texts/regular-text'
 
 export const Navbar: React.FC = () => {
   const [time, setTime] = useState<number>(Date.now())
   const [open, setOpen] = useState<boolean>(false)
-  const { unfocusAllWindows, focusWindow } = useWindows()
+
+  const [focusWindow, unfocusAllWindows] = useWindowsStore(useShallow((s) => [s.focus, s.unfocusAll]))
 
   const ref = useClickAway<HTMLButtonElement>(() => {
     setOpen(false)

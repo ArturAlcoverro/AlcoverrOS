@@ -1,10 +1,13 @@
+import { useCursorFocus } from '@components/cursor/use-cursor-focus'
 import { IconFactory } from '@components/icon-factory/icon-factory'
-import { useWindows } from '@hooks/use-windows'
 import { Window, WindowCoords } from '@store/windows/types'
+import { useWindowsStore } from '@store/windows/windows-store'
 import { motion, TargetAndTransition } from 'motion/react'
 import { Resizable, ResizeCallback, ResizeStartCallback } from 're-resizable'
 import React, { useState } from 'react'
-import Draggable, { DraggableEventHandler } from 'react-draggable' // The default
+import Draggable from 'react-draggable' // The default
+import { cn } from 'src/utils/cn'
+import { useShallow } from 'zustand/shallow'
 import { SmallText } from '../texts/small-text'
 
 interface WindowContainerProps {
@@ -13,7 +16,11 @@ interface WindowContainerProps {
 }
 
 export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, children }) => {
-  const { closeWindow, moveWindow, resizeWindow, focusWindow } = useWindows()
+  const [closeWindow, moveWindow, resizeWindow, focusWindow] = useWindowsStore(
+    useShallow((s) => [s.close, s.move, s.resize, s.focus])
+  )
+
+  const { onMouseEnter, onMouseLeave } = useCursorFocus()
 
   const [coords, setCoords] = useState<WindowCoords>({
     x: windowItem.cords?.x || 50,
@@ -27,14 +34,6 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
 
   const focusHandler = () => {
     focusWindow(windowItem.key)
-  }
-
-  const onDragHandler: DraggableEventHandler = (_e, data) => {
-    setCoords({ x: data.x, y: data.y })
-  }
-
-  const onDragStopHandler: DraggableEventHandler = (_e, data) => {
-    moveWindow(windowItem.key, { x: data.x, y: data.y })
   }
 
   const onResizeStartHandler: ResizeStartCallback = () => {
@@ -81,8 +80,8 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
       bounds="parent"
       position={coords}
       onStart={focusHandler}
-      onDrag={onDragHandler}
-      onStop={onDragStopHandler}
+      onDrag={(_e, data) => setCoords({ x: data.x, y: data.y })}
+      onStop={(_e, data) => moveWindow(windowItem.key, { x: data.x, y: data.y })}
     >
       <Resizable
         boundsByDirection={true}
@@ -96,18 +95,23 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
         className={`absolute! flex flex-col pointer-events-auto`}
       >
         <motion.div
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
           initial={onCloseStyles}
           animate={onOpenStyles}
           exit={onCloseStyles}
           transition={{ duration: 0.25, bounce: 1 }}
-          className="absolute h-full w-full flex flex-col border border-divider backdrop-blur-(--blur) bg-background-opaque"
+          className={cn(
+            'absolute h-full w-full flex flex-col border border-divider backdrop-blur-(--blur) bg-background-opaque',
+            { '!opacity-75 border-divider/50': !windowItem.focused }
+          )}
         >
           <div
             role="button"
             tabIndex={0}
             onKeyDown={focusHandler}
             onClick={focusHandler}
-            // onMouseDown={focusHandler}
+            onMouseDown={focusHandler}
             className="grow-0 w-full border-b border-divider h-6 shrink-0 relative flex justify-end items-center cursor-default"
           >
             <div className="drag w-full h-full flex justify-center items-center ">
@@ -117,7 +121,6 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
             </div>
             <button onClick={closeWindowHandler} className="h-full aspect-square border-l border-divider group">
               <IconFactory
-                onClick={closeWindowHandler}
                 icon="close"
                 size={48}
                 className="w-full aspect-square h-auto p-0.5 fill-font stroke-font group-hover:stroke-accent"

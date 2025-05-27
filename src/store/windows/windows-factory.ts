@@ -27,7 +27,7 @@ const windowsData: Record<WindowId, Omit<PartialWindow, 'key'>> = {
   }
 }
 
-export const WindowFactory = (windowKey: WindowKey): Window => {
+export const WindowsFactory = (windowKey: WindowKey): Window => {
   const window = windowsData[windowKey.id]
 
   return {

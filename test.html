@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursor Custom Test</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      cursor: none; /* OCULTAMOS cursor nativo globalmente */
+      font-family: sans-serif;
+    }
+
+    .area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 20px;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    input {
+      cursor: text;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: lightgray;
+      cursor: grab;
+    }
+
+    #fake-cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10000;
+      transform: translate(-50%, -50%);
+    }
+
+    #cursor-label {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      pointer-events: none;
+      z-index: 10001;
+    }
+  </style>
+</head>
+<body>
+  <div class="area">
+    <button>Botón</button>
+    <input type="text" placeholder="Escribe aquí" />
+    <div class="box"></div>
+  </div>
+
+  <div id="fake-cursor"></div>
+  <div id="cursor-label">cursor: default</div>
+
+  <script>
+    const fakeCursor = document.getElementById('fake-cursor');
+    const label = document.getElementById('cursor-label');
+
+    document.addEventListener('mousemove', (e) => {
+      // mueve el cursor falso
+      fakeCursor.style.left = `${e.clientX}px`;
+      fakeCursor.style.top = `${e.clientY}px`;
+
+      const el = document.elementFromPoint(e.clientX, e.clientY);
+      if (el) {
+        const cursor = getComputedStyle(el).cursor;
+
+        // muestra el valor del cursor
+        label.textContent = `cursor: ${cursor}`;
+
+        // cambia color según tipo de cursor
+        switch (cursor) {
+          case 'pointer':
+            fakeCursor.style.background = 'blue';
+            break;
+          case 'text':
+            fakeCursor.style.background = 'green';
+            break;
+          case 'grab':
+            fakeCursor.style.background = 'orange';
+            break;
+          default:
+            fakeCursor.style.background = 'red';
+        }
+      }
+    });
+  </script>
+</body>
+</html>
