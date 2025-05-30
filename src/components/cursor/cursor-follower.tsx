@@ -5,14 +5,28 @@ import { useEffect } from 'react'
 import { cn } from 'src/utils/cn'
 import { useCursorStore } from './cursor-store'
 
-type Props = { position: 'top' | 'bottom' }
+export type ArrowId = '1' | '2'
+
+type Props = {
+  id: ArrowId
+}
 
 const spring: SpringOptions = {
   damping: 200,
   stiffness: 3000
 }
 
-export const CursorFollower: React.FC<Props> = ({ position }) => {
+const variants = {
+  idle: {
+    rotate: [0, 360],
+    transition: { rotate: { ease: 'linear', duration: 10, repeat: Infinity } }
+  },
+  focused: {
+    rotate: 90
+  }
+}
+
+const CursorFollower: React.FC<Props> = ({ id }) => {
   const { focusElement } = useCursorStore()
 
   const x = useSpring(window.innerWidth / 2, spring)
@@ -24,7 +38,9 @@ export const CursorFollower: React.FC<Props> = ({ position }) => {
           animate: { rotate: [0, 360] },
           transition: { rotate: { ease: 'linear', duration: 10, repeat: Infinity } }
         }
-      : { animate: { rotate: 90 }, transition: undefined }
+      : {}
+
+  console.log('> ❎🆘🆚 - rotation: ', rotation)
 
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => {
@@ -36,7 +52,7 @@ export const CursorFollower: React.FC<Props> = ({ position }) => {
 
       const rect = focusElement.getBoundingClientRect()
 
-      if (position === 'top') {
+      if (id === '1') {
         x.set(rect.x + rect.width - 10)
         y.set(rect.y + 10)
       } else {
@@ -49,18 +65,28 @@ export const CursorFollower: React.FC<Props> = ({ position }) => {
     return () => window.removeEventListener('mousemove', updatePosition)
   }, [focusElement])
 
+  console.log('> ❎🆘🆚 - focusElement: ', focusElement)
+
   return (
     <motion.div
       className={cn('size-5 flex -translate-x-1/2 -translate-y-1/2 fixed z-[9999] pointer-events-none', {
-        'justify-start items-start': position === 'top',
-        'justify-end items-end': position === 'bottom'
+        'justify-start items-start': id === '1',
+        'justify-end items-end': id === '2',
+        // '!rotate-90': focusElement !== null
       })}
       style={{ x, y }}
-      animate={rotation.animate}
-      transition={rotation.transition}
+      variants={variants}
+      animate={focusElement === null ? 'idle' : 'focused'}
     >
       <div className="w-0.5 h-full bg-accent absolute" />
       <div className="w-full h-0.5 bg-accent absolute" />
     </motion.div>
   )
 }
+
+export const CursorFollowers = () => (
+  <>
+    <CursorFollower id="1" />
+    <CursorFollower id="2" />
+  </>
+)

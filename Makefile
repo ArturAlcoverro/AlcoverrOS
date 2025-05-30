@@ -1,20 +1,20 @@
 install:
-	pnpm install
+	bun install
 
 dev:
-	pnpm run dev
+	bun run dev
 
 build:
-	pnpm run build
+	bun run build
 
 preview:
-	pnpm run preview
+	bun run preview
 
 start:
-	pnpm run build && pnpm run preview
+	bun run build && bun run preview
 
 lint:
-	pnpm run lint
+	bun run lint
 
 clean-deps:
 	rm -rf node_modules
@@ -24,4 +24,4 @@ clean-deps:
 	rm -f yarn.lock
 
 compile:
-	pnpm run compile
+	bun run compile

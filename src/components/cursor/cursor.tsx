@@ -1,6 +1,6 @@
 import { motion, useMotionValue } from 'motion/react'
 import { useEffect } from 'react'
-import { CursorFollower } from './cursor-follower'
+import { CursorFollowers } from './cursor-follower'
 import { useCursorStore } from './cursor-store'
 
 function Cursor() {
@@ -26,8 +26,7 @@ function Cursor() {
         <div className="size-1 rounded-full bg-accent absolute" />
       </motion.div>
 
-      <CursorFollower position="top" />
-      <CursorFollower position="bottom" />
+      <CursorFollowers />
     </>
   )
 }
