@@ -3,7 +3,7 @@ import { H1 } from '../texts'
 import { MenuAction } from './menu-action'
 import { actions, sections } from './menu-data'
 import { MenuSection } from './menu-section'
-import './Menu.css'
+import './menu.css'
 
 type MenuProps = {
   open: boolean

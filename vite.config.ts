@@ -1,10 +1,11 @@
 import react from '@vitejs/plugin-react-swc'
 import path from 'path'
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
 import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
-  plugins: [svgr(), react()],
+  plugins: [svgr(), react(), tailwindcss()],
   preview: { host: true, port: 3000 },
   server: { host: true, port: 3000 },
   resolve: {
