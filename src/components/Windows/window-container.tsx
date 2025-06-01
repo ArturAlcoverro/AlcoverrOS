@@ -6,7 +6,8 @@ import { motion, TargetAndTransition } from 'motion/react'
 import { Resizable, ResizeCallback, ResizeStartCallback } from 're-resizable'
 import React, { useState } from 'react'
 import Draggable from 'react-draggable' // The default
-import { cn } from 'src/utils/cn'
+
+import { cn } from '@/utils/cn'
 import { useShallow } from 'zustand/shallow'
 import { SmallText } from '../texts/small-text'
 

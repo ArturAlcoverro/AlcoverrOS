@@ -2,7 +2,7 @@ import { motion } from 'motion/react'
 
 import { SpringOptions, useSpring } from 'motion/react'
 import { useEffect, useState } from 'react'
-import { cn } from 'src/utils/cn'
+import { cn } from '@/utils/cn'
 import { getPosition } from './cursor-follower.utils'
 import { useCursorStore } from './cursor-store'
 
