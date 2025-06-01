@@ -1,0 +1,1 @@
+import{r as t}from"./index-ChfuzLv2.js";const o=e=>t.createElement("svg",{width:48,height:48,viewBox:"0 0 48 48",fill:"none",xmlns:"http://www.w3.org/2000/svg",...e},t.createElement("path",{d:"M6 6H42V20H6V6Z",strokeWidth:2}),t.createElement("path",{d:"M6 28H42V42H6V28Z",strokeWidth:2}));export{o as default};

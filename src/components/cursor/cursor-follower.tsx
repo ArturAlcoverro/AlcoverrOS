@@ -1,8 +1,9 @@
 import { motion } from 'motion/react'
 
 import { SpringOptions, useSpring } from 'motion/react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { cn } from 'src/utils/cn'
+import { getPosition } from './cursor-follower.utils'
 import { useCursorStore } from './cursor-store'
 
 export type ArrowId = '1' | '2'
@@ -22,7 +23,7 @@ const variants = {
     transition: { rotate: { ease: 'linear', duration: 10, repeat: Infinity } }
   },
   focused: {
-    rotate: 90
+    transition: { duration: 10 }
   }
 }
 
@@ -31,16 +32,9 @@ const CursorFollower: React.FC<Props> = ({ id }) => {
 
   const x = useSpring(window.innerWidth / 2, spring)
   const y = useSpring(window.innerHeight / 2, spring)
+  const [rotation, setRotation] = useState<number>(0)
 
-  const rotation =
-    focusElement === null
-      ? {
-          animate: { rotate: [0, 360] },
-          transition: { rotate: { ease: 'linear', duration: 10, repeat: Infinity } }
-        }
-      : {}
-
-  console.log('> ❎🆘🆚 - rotation: ', rotation)
+  console.log('>>', rotation)
 
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => {
@@ -50,31 +44,24 @@ const CursorFollower: React.FC<Props> = ({ id }) => {
         return
       }
 
-      const rect = focusElement.getBoundingClientRect()
+      const position = getPosition({ id, position: 'left-side', focusElement })
 
-      if (id === '1') {
-        x.set(rect.x + rect.width - 10)
-        y.set(rect.y + 10)
-      } else {
-        x.set(rect.x + 10)
-        y.set(rect.y + rect.height - 10)
-      }
+      x.set(position.x)
+      y.set(position.y)
+      setRotation(position.rotation)
     }
 
     window.addEventListener('mousemove', updatePosition)
     return () => window.removeEventListener('mousemove', updatePosition)
   }, [focusElement])
 
-  console.log('> ❎🆘🆚 - focusElement: ', focusElement)
-
   return (
     <motion.div
       className={cn('size-5 flex -translate-x-1/2 -translate-y-1/2 fixed z-[9999] pointer-events-none', {
         'justify-start items-start': id === '1',
-        'justify-end items-end': id === '2',
-        // '!rotate-90': focusElement !== null
+        'justify-end items-end': id === '2'
       })}
-      style={{ x, y }}
+      style={{ x, y, ...(focusElement !== null && { rotate: rotation }) }}
       variants={variants}
       animate={focusElement === null ? 'idle' : 'focused'}
     >

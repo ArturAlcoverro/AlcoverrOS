@@ -1,1 +1,0 @@
-import{r as e}from"./index-36ddc678.js";const o=t=>e.createElement("svg",{width:48,height:48,viewBox:"0 0 48 48",xmlns:"http://www.w3.org/2000/svg",...t},e.createElement("path",{fillRule:"evenodd",clipRule:"evenodd",d:"M31.5211 24.0001L14 6.41149L15.4169 5L33.641 23.2944L34.344 24.0001L33.641 24.7059L15.4169 43.0002L14 41.5888L31.5211 24.0001Z"}));export{o as default};

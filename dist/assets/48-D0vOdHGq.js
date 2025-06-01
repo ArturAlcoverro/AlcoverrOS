@@ -1,0 +1,1 @@
+import{r as e}from"./index-ChfuzLv2.js";const o=t=>e.createElement("svg",{width:48,height:48,viewBox:"0 0 48 48",xmlns:"http://www.w3.org/2000/svg",...t},e.createElement("path",{fillRule:"evenodd",clipRule:"evenodd",d:"M16.4789 24.0001L34 6.41149L32.5831 5L14.359 23.2944L13.656 24.0001L14.359 24.7059L32.5831 43.0002L34 41.5888L16.4789 24.0001Z"}));export{o as default};
