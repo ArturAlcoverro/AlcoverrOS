@@ -1,4 +1,5 @@
-import { ContactItem, ContactItemProps } from './contact-item'
+import type { ContactItemProps } from './contact-item'
+import { ContactItem } from './contact-item'
 
 const items: ContactItemProps[] = [
   {

@@ -1,4 +1,4 @@
-import { Window, WindowKey } from './types'
+import type { Window, WindowKey } from './types'
 
 function order(state: Window[]): Window[] {
   const newState = state.sort((a, b) => a.zIndex - b.zIndex)

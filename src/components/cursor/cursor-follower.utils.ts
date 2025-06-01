@@ -1,4 +1,4 @@
-import { ArrowId } from './cursor-follower'
+import type { ArrowId } from './cursor-follower'
 
 type Position = 'corners' | 'left-side' | 'right-side' | 'center'
 

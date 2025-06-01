@@ -1,8 +1,8 @@
 import { motion } from 'motion/react'
 
-import { SpringOptions, useSpring } from 'motion/react'
-import { useEffect, useState } from 'react'
 import { cn } from '@/utils/cn'
+import { type SpringOptions, useSpring } from 'motion/react'
+import { useEffect, useState } from 'react'
 import { getPosition } from './cursor-follower.utils'
 import { useCursorStore } from './cursor-store'
 

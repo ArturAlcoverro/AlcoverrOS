@@ -1,4 +1,4 @@
-import { IconId } from '@components/icon-factory/icon-data'
+import { type IconId } from '@components/icon-factory/icon-data'
 import { IconFactory } from '@components/icon-factory/icon-factory'
 import { H2, RegularText } from '@components/texts'
 

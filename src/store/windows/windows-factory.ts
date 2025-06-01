@@ -1,4 +1,4 @@
-import { Window, WindowId, WindowKey } from './types'
+import type { Window, WindowId, WindowKey } from './types'
 
 type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>
 

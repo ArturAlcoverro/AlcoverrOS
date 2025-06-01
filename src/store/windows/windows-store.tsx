@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { Window, WindowCoords, WindowKey, WindowSize } from './types'
+import type { Window, WindowCoords, WindowKey, WindowSize } from './types'
 import { WindowsFactory } from './windows-factory'
 import { WindowsStoreUtils } from './windows-store-utils'
 

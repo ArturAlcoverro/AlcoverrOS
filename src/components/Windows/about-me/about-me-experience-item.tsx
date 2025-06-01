@@ -1,6 +1,6 @@
 import { RegularText } from '@components/texts/regular-text'
 import { SmallText } from '@components/texts/small-text'
-import { ExperienceItemProps } from './data'
+import type { ExperienceItemProps } from './data'
 
 export const AboutMeExperienceItem: React.FC<ExperienceItemProps> = ({
   title,

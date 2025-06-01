@@ -1,6 +1,6 @@
 import { WindowContainer } from '@components/windows/window-container'
-import { Window, WindowId } from '@store/windows/types'
-import { FC, LazyExoticComponent, Suspense, lazy } from 'react'
+import type { Window, WindowId } from '@store/windows/types'
+import { type FC, type LazyExoticComponent, Suspense, lazy } from 'react'
 
 const windows: Record<WindowId, WindowElement> = {
   about: lazy(() => import('@components/windows/about-me/about-me')),

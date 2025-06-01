@@ -4,7 +4,7 @@ import { RegularText } from '@components/texts/regular-text'
 import { WindowFactory } from '@components/windows/window-factory'
 import { useExplorer } from '@hooks/use-explorer'
 import { File, Folder } from '@store/explorer/types'
-import { WindowKey } from '@store/windows/types'
+import { type WindowKey } from '@store/windows/types'
 import { useWindowsStore } from '@store/windows/windows-store'
 import { AnimatePresence } from 'motion/react'
 

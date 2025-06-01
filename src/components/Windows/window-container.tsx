@@ -1,9 +1,9 @@
 import { useCursorFocus } from '@components/cursor/use-cursor-focus'
 import { IconFactory } from '@components/icon-factory/icon-factory'
-import { Window, WindowCoords } from '@store/windows/types'
+import type { Window, WindowCoords } from '@store/windows/types'
 import { useWindowsStore } from '@store/windows/windows-store'
-import { motion, TargetAndTransition } from 'motion/react'
-import { Resizable, ResizeCallback, ResizeStartCallback } from 're-resizable'
+import { motion, type TargetAndTransition } from 'motion/react'
+import { Resizable, type ResizeCallback, type ResizeStartCallback } from 're-resizable'
 import React, { useState } from 'react'
 import Draggable from 'react-draggable' // The default
 

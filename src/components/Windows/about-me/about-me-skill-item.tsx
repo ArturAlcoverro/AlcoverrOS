@@ -1,5 +1,5 @@
 import { SmallText } from '@components/texts/small-text'
-import { SkillItemProps } from './data'
+import type { SkillItemProps } from './data'
 
 export const AboutMeSkillItem: React.FC<SkillItemProps> = ({ title, skills }) => {
   return (
