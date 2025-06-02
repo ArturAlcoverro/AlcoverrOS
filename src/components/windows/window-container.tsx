@@ -1,3 +1,4 @@
+import { cn } from '@/utils/cn'
 import { useCursorFocus } from '@components/cursor/use-cursor-focus'
 import { IconFactory } from '@components/icon-factory/icon-factory'
 import type { Window, WindowCoords } from '@store/windows/types'
@@ -5,9 +6,7 @@ import { useWindowsStore } from '@store/windows/windows-store'
 import { motion, type TargetAndTransition } from 'motion/react'
 import { Resizable, type ResizeCallback, type ResizeStartCallback } from 're-resizable'
 import React, { useState } from 'react'
-import Draggable from 'react-draggable' // The default
-
-import { cn } from '@/utils/cn'
+import Draggable from 'react-draggable'
 import { useShallow } from 'zustand/shallow'
 import { SmallText } from '../texts/small-text'
 
@@ -104,7 +103,7 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
           transition={{ duration: 0.25, bounce: 1 }}
           className={cn(
             'absolute h-full w-full flex flex-col border border-divider backdrop-blur-(--blur) bg-background-opaque',
-            { '!opacity-75 border-divider/50': !windowItem.focused }
+            { '!opacity-50 border-divider/50': !windowItem.focused }
           )}
         >
           <div
