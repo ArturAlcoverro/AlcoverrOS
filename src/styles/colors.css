@@ -1,0 +1,12 @@
+:root {
+  --divider: hsl(0, 0%, 20%);
+
+  --font: hsl(0, 0%, 93%);
+  --font-secondary: hsl(180, 0%, 53%);
+
+  --background: hsl(0, 0%, 0%);
+  --background-opaque: hsla(0, 0%, 0%, 0.004);
+  --background-secondary: hsl(240, 5%, 4%);
+
+  --accent: hsl(22, 100%, 57%);
+}
