@@ -44,7 +44,7 @@ const CursorFollower: React.FC<Props> = ({ id }) => {
         return
       }
 
-      const position = getPosition({ id, position: 'left-side', focusElement })
+      const position = getPosition({ id, position: 'corners', focusElement })
 
       x.set(position.x)
       y.set(position.y)
