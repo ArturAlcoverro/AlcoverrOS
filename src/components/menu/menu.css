@@ -1,0 +1,38 @@
+/* MENU ANIMATION */
+.menu-animation-enter {
+  opacity: 1 !important;
+  height: 0;
+  left: -3.5rem;
+}
+
+.menu-animation-enter-active {
+  height: 40rem;
+  left: 0;
+  transition: height 500ms, left 500ms 500ms;
+}
+
+.menu-animation-enter-done {
+  opacity: 1 !important;
+  height: 40rem;
+  left: 0;
+}
+
+.menu-animation-exit-done {
+  opacity: 0;
+}
+/* =============== */
+
+/* ACTIONS ANIMATION */
+.menu-animation-enter .menu-actions {
+  right: -12%;
+}
+
+.menu-animation-enter-active .menu-actions {
+  right: 0;
+  transition: right 250ms 1000ms;
+}
+
+.menu-animation-enter-done .menu-actions {
+  right: 0;
+}
+/* =============== */
