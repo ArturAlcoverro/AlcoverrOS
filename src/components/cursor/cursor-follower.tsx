@@ -1,7 +1,5 @@
-import { motion } from 'motion/react'
-
 import { cn } from '@/utils/cn'
-import { type SpringOptions, useSpring } from 'motion/react'
+import { type SpringOptions, motion, useSpring } from 'motion/react'
 import { useEffect, useState } from 'react'
 import { getPosition } from './cursor-follower.utils'
 import { useCursorStore } from './cursor-store'
@@ -20,7 +18,7 @@ const spring: SpringOptions = {
 const variants = {
   idle: {
     rotate: [0, 360],
-    transition: { rotate: { ease: 'linear', duration: 10, repeat: Infinity } }
+    transition: { rotate: { ease: 'linear', duration: 10, repeat: Number.POSITIVE_INFINITY } }
   },
   focused: {
     transition: { duration: 10 }
@@ -33,8 +31,6 @@ const CursorFollower: React.FC<Props> = ({ id }) => {
   const x = useSpring(window.innerWidth / 2, spring)
   const y = useSpring(window.innerHeight / 2, spring)
   const [rotation, setRotation] = useState<number>(0)
-
-  console.log('>>', rotation)
 
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => {
@@ -53,7 +49,7 @@ const CursorFollower: React.FC<Props> = ({ id }) => {
 
     window.addEventListener('mousemove', updatePosition)
     return () => window.removeEventListener('mousemove', updatePosition)
-  }, [focusElement])
+  }, [focusElement, id, x.set, y.set])
 
   return (
     <motion.div

@@ -3,9 +3,10 @@ import { useCursorFocus } from '@components/cursor/use-cursor-focus'
 import { IconFactory } from '@components/icon-factory/icon-factory'
 import type { Window, WindowCoords } from '@store/windows/types'
 import { useWindowsStore } from '@store/windows/windows-store'
-import { motion, type TargetAndTransition } from 'motion/react'
+import { type TargetAndTransition, motion } from 'motion/react'
 import { Resizable, type ResizeCallback, type ResizeStartCallback } from 're-resizable'
-import React, { useState } from 'react'
+import type React from 'react'
+import { useState } from 'react'
 import Draggable from 'react-draggable'
 import { useShallow } from 'zustand/shallow'
 import { SmallText } from '../texts/small-text'
@@ -92,7 +93,7 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
         defaultSize={windowItem.size}
         minHeight={windowItem.minSize.height}
         minWidth={windowItem.minSize.width}
-        className={`absolute! flex flex-col pointer-events-auto`}
+        className="absolute! flex flex-col pointer-events-auto"
       >
         <motion.div
           onMouseEnter={onMouseEnter}
@@ -103,7 +104,7 @@ export const WindowContainer: React.FC<WindowContainerProps> = ({ windowItem, ch
           transition={{ duration: 0.25, bounce: 1 }}
           className={cn(
             'absolute h-full w-full flex flex-col border border-divider backdrop-blur-(--blur) bg-background-opaque',
-            { '!opacity-50 border-divider/50': !windowItem.focused }
+            { '!opacity-50 border-divider/50 !backdrop-blur-(--unfocused-blur)': !windowItem.focused }
           )}
         >
           <div

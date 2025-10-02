@@ -1,4 +1,4 @@
-import { type IconId } from '@components/icon-factory/icon-data'
+import type { IconId } from '@components/icon-factory/icon-data'
 import type { WindowKey } from '@store/windows/types'
 
 interface IExplorerItem {
@@ -58,7 +58,6 @@ export class Folder extends ExplorerItem {
     super(folder)
     this.items = folder.items || []
     this.favorite = folder.favorite || false
-    return this
   }
 
   static create({ name, icon, path, items, favorite, hidden }: Omit<IFolder, 'type'>) {

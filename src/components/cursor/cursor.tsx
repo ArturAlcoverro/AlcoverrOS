@@ -15,7 +15,7 @@ function Cursor() {
 
     window.addEventListener('mousemove', updatePosition)
     return () => window.removeEventListener('mousemove', updatePosition)
-  }, [])
+  }, [x.set, y.set])
 
   return (
     <>

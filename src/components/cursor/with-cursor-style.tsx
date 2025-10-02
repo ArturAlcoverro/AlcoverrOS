@@ -1,5 +1,5 @@
-import { MouseEventHandler, useRef } from 'react'
-import { useCursorStore, type CursorStyle } from './cursor-store'
+import { type MouseEventHandler, useRef } from 'react'
+import { type CursorStyle, useCursorStore } from './cursor-store'
 
 type Props = {
   onMouseEnter?: MouseEventHandler | undefined
@@ -8,7 +8,7 @@ type Props = {
 
 export function withCursorStyle<TProps extends Props>(Component: React.FC<TProps>, style: CursorStyle) {
   const ComponentWithCursorStyle = (props: TProps & { style?: CursorStyle }) => {
-    const timeoutRef = useRef<number>()
+    const timeoutRef = useRef<NodeJS.Timeout>()
     const setStyle = useCursorStore((s) => s.setStyle)
 
     const { onMouseEnter, onMouseLeave, style: styleProp, ...rest } = props

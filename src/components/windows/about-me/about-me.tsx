@@ -33,7 +33,7 @@ export const AboutMe: React.FC = () => {
         </div>
         <div className="flex  w-full border-b border-divider flex-col p-4 gap-4 relative">
           <H2 className="pl-[113px]">Experience</H2>
-          <div className="absolute w-px h-full bg-divider top-0 left-30"></div>
+          <div className="absolute w-px h-full bg-divider top-0 left-30"/>
           <div className="flex flex-col gap-6 ">
             {experience.map((item, index) => (
               <AboutMeExperienceItem key={index} {...item} />
@@ -48,7 +48,7 @@ export const AboutMe: React.FC = () => {
         </div>
         <div className="flex w-full flex-col p-4 gap-4 relative">
           <H2 className="pl-[113px]">Education</H2>
-          <div className="absolute w-px h-full bg-divider top-0 left-30"></div>
+          <div className="absolute w-px h-full bg-divider top-0 left-30"/>
           <div className="flex flex-col gap-6 ">
             {education.map((item, index) => (
               <AboutMeExperienceItem key={index} {...item} />

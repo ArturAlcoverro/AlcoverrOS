@@ -33,6 +33,7 @@ html {
 
 :root {
   --blur: 4px;
+  --unfocused-blur: 8px;
 }
 
 .scrollbar-hidden::-webkit-scrollbar {

@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
           <RegularText className="text-center">{date}</RegularText>
         </div>
       </nav>
-      <Menu open={open}></Menu>
+      <Menu open={open} />
     </div>
   )
 }

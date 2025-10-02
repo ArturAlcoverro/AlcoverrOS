@@ -4,5 +4,8 @@
     "titleBar.inactiveBackground": "#ff9f51",
     "titleBar.activeForeground": "#000000",
     "titleBar.inactiveForeground": "#3b3b3b"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
   }
 }

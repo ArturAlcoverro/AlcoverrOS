@@ -13,7 +13,7 @@ export const FileExplorer: React.FC = () => {
               <IconFactory icon="arrowRight" size={32} className="fill-font hover:fill-accent" />
             </button>
           </div>
-          <div className="grow"></div>
+          <div className="grow"/>
           <div className="grow-0 p-2 flex border-l border-divider">
             <button>
               <IconFactory icon="grid" size={32} className="stroke-font hover:stroke-accent" />
@@ -22,8 +22,8 @@ export const FileExplorer: React.FC = () => {
         </div>
       </div>
       <div className="flex grow">
-        <div className="grow-0"></div>
-        <div className="flex grow"></div>
+        <div className="grow-0"/>
+        <div className="flex grow"/>
       </div>
     </div>
   )

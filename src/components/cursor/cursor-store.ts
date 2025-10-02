@@ -2,6 +2,7 @@ import { create } from 'zustand'
 
 type CursorStyle = 'default' | 'pointer' | 'close' | 'grab' | 'expand-x' | 'expand-y' | 'expand-xy'
 
+
 type CursorStore = {
   focusElement: HTMLElement | null
   style: CursorStyle
